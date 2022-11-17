@@ -1,14 +1,7 @@
 package kr.go.suwon.controller;
 
 import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.InvalidParameterSpecException;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -65,9 +58,9 @@ public class UserUpdateCtrl extends HttpServlet {
 		suc = dao.updateUser(user);
 		
 		if(suc>=1){
-			response.sendRedirect("/");
+			response.sendRedirect("GetUserDetailCtrl.do");
 		} else {
-			response.sendRedirect("UserInfoCtrl");
+			response.sendRedirect("UserInfoCtrl.do");
 		}
 	}
 }

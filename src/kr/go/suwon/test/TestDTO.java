@@ -1,19 +1,20 @@
-package kr.go.suwon.model;
+package kr.go.suwon.test;
 
 public class TestDTO {
 	private String name;
-	private String point;
+	private int point;
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPoint() {
+	public int getPoint() {
 		return point;
 	}
-	public void setPoint(String point) {
+	public void setPoint(int point) {
 		this.point = point;
 	}
+	
 	
 }

@@ -18,11 +18,15 @@ public class UserInfoCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		String id = (String) session.getAttribute("sid");
 		
+		
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+
+
 		UserDAO dao = new UserDAO();
 		UserDTO dto = dao.userInfo(id);
+
 		
 		//dao로 부터 받은 데이터를 view에 디스패치함
 		request.setAttribute("dto", dto);

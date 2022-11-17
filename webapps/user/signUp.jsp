@@ -84,7 +84,6 @@
 			<a href="<%=request.getContextPath() %>/user/login.jsp" class="button button-danger">로그인</a>
 		</div>
 	</form>	
-	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
 	$(document).ready(function(){
 		$("#id").keyup(function(){
@@ -97,7 +96,6 @@
 		});
 	});
 	</script>
-	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
 	function idCheck(){
 		if($("#id").val()==""){
@@ -139,7 +137,6 @@
 		}
 	}
 	</script>
-	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
 	function findAddr() {
 		new daum.Postcode({

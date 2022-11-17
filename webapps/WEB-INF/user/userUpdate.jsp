@@ -119,7 +119,7 @@
 		</table>
 		<div class="btn-group">
 			<input type="submit" name="submit-btn" class="button is-danger" value="회원정보변경">
-			<a href="${path1 }" class="button is-info">취소</a>
+			<a href="${path1 }/GetUserDetailCtrl.do" class="button is-info">취소</a>
 		</div>
 	</form>	
 	<script>

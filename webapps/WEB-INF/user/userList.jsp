@@ -31,7 +31,7 @@
 		   <c:forEach items="${list }" var="dto" varStatus="status">
 		    <tr>
 		      <td>${status.count }</td>
-		      <td><a href="${path1 }/GetUserCtrl.do?uid=${dto.uid }">${dto.uid }</a></td>
+		      <td><a href="${path1 }/GetUserDetailCtrl.do?uid=${dto.id }">${dto.id }</a></td>
 		      <td>
 		      	<fmt:parseDate value="${dto.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
 		      	<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
@@ -45,7 +45,7 @@
 		  </tbody>
 		</table>
 		<div class="buttons">
-		  <a href="${path1 }/notice/addNotice.jsp" class="button is-success">글 등록</a>
+		  <a href="${path1 }/AddUserCtrl.do" class="button is-success">회원 등록</a>
 		</div>
     </div>
   </section>

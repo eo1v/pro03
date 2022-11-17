@@ -23,7 +23,7 @@
 		   <tbody>
 		    <tr>
 		      <th>아이디</th>
-		      <td>${dto.uid }</td>
+		      <td>${dto.id }</td>
 		    </tr>
 		    <tr>
 		      <th>비밀번호</th>
@@ -39,7 +39,7 @@
 		     </tr>
 		    <tr>
 		      <th>주소</th>
-		      <td><p>${dto.address }</p></td>
+		      <td><p>${dto.addr }</p></td>
 		    </tr>
 		    <tr>
 		      <th>가입일</th>
@@ -47,7 +47,12 @@
 		    </tr>
 		  </tbody>
 		</table>
-		<a href="${path1 }/GetUserListCtrl.do">목록</a>
+		<div class="buttons">
+		  <a href="${path1 }/GetUserListCtrl.do" class="button is-primary">목록</a>
+		</div>
+		<div class="buttons">
+		  <a href="${path1 }/UserInfoCtrl.do" class="button is-success">회원 수정</a>
+		</div>
     </div>
   </section>
   <jsp:include page="/footer.jsp"></jsp:include>

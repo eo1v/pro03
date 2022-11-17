@@ -1,34 +1,34 @@
-package kr.go.suwon.test;
+package kr.go.suwon.view;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.*;
+import kr.go.suwon.dto.TourDTO;
+import kr.go.suwon.model.TourDAO;
 
-@WebServlet("/JSONTest2.do")
-public class JSONTest2 extends HttpServlet {
+
+@WebServlet("/GetTourListCtrl.do")
+public class GetTourListCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		int no = Integer.parseInt(request.getParameter("no"));
+		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-
-		String name = request.getParameter("name");
 		
-		TestDAO dao= new TestDAO();
-		TestDTO result = dao.testDataOne(name);
+		TourDAO dao = new TourDAO();
+		TourDTO dto = dao.getTour(no);
 		
-		JSONObject json = new JSONObject();
-		json.put("name", result.getName());
-		json.put("point", result.getPoint());
-		PrintWriter out = response.getWriter();
-		out.println(json.toString());
-		}
-
+		request.setAttribute("dto", dto);
+		
+		RequestDispatcher view = request.getRequestDispatcher("");
+		
+	}
 }

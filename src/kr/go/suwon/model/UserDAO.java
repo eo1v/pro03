@@ -109,7 +109,7 @@ public class UserDAO {
 		try {
 			con = Maria.getConnection();
 			//읽은 횟수 증가
-			pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
+			pstmt = con.prepareStatement(Maria.USER_ALL);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
@@ -147,13 +147,15 @@ public class UserDAO {
 			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_UPDATE);
 			//id, pw, name, birth, email, tel, address
-			pstmt.setString(1, user.getId());
-			pstmt.setString(2, user.getPw());
-			pstmt.setString(3, user.getName());
-			pstmt.setString(4, user.getBirth());
-			pstmt.setString(5, user.getEmail());
-			pstmt.setString(6, user.getTel());
-			pstmt.setString(7, user.getAddr());
+		
+			pstmt.setString(1, user.getPw());
+			pstmt.setString(2, user.getName());
+			pstmt.setString(3, user.getBirth());
+			pstmt.setString(4, user.getEmail());
+			pstmt.setString(5, user.getTel());
+			pstmt.setString(6, user.getAddr());
+			pstmt.setString(7, user.getId());
+			
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");

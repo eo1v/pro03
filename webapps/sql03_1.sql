@@ -50,7 +50,7 @@ DESC pic;
 
 SELECT * FROM pic;
 
-CREATE TABLE tourlist(
+CREATE TABLE tour(
 	no INT PRIMARY KEY AUTO_INCREMENT,
 	tourno VARCHAR(20) NOT NULL,
 	cate VARCHAR(20) NOT NULL,
@@ -59,4 +59,5 @@ CREATE TABLE tourlist(
 	content2 VARCHAR(1000) NOT NULL
 );
 
-DESC tourlist;
+DESC tour;
+SELECT * FROM tour;

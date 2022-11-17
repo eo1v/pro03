@@ -60,6 +60,7 @@ public class AddUserCtrl extends HttpServlet {
 			user.setEmail(email);
 			user.setBirth(birth);
 			suc = dao.addUser(user);
+			
 			if(suc>=1){
 				response.sendRedirect(request.getContextPath());
 			} else {

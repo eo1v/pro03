@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import kr.go.suwon.dto.UserDTO;
 import kr.go.suwon.model.UserDAO;
@@ -22,8 +21,9 @@ public class GetUserDetailCtrl extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		String id = (String) request.getParameter("id");
+		String id = (String) request.getParameter ("id");
 		
+		//DAO에서 목록 불러오기, 호출하여 반환받음
 		UserDAO dao = new UserDAO();
 		UserDTO dto = dao.userInfo(id);
 		

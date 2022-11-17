@@ -1,17 +1,11 @@
 package kr.go.suwon.dto;
 
 public class PicDTO {
-	private int no;
+
 	private String tourno;
 	private String picname;
 	private int pos;
-	
-	public int getNo() {
-		return no;
-	}
-	public void setNo(int no) {
-		this.no = no;
-	}
+	private int no;
 	public String getTourno() {
 		return tourno;
 	}
@@ -30,6 +24,12 @@ public class PicDTO {
 	public void setPos(int pos) {
 		this.pos = pos;
 	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
 	
-	
+
 }
