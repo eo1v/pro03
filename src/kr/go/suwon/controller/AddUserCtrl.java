@@ -1,7 +1,16 @@
 package kr.go.suwon.controller;
 
 import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.InvalidParameterSpecException;
 
+
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 import kr.go.suwon.dto.UserDTO;
 import kr.go.suwon.model.UserDAO;
 import kr.go.suwon.service.AES256;
+
+
 
 @WebServlet("/AddUserCtrl.do")
 public class AddUserCtrl extends HttpServlet {
