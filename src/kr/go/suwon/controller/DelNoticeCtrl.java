@@ -24,10 +24,11 @@ public class DelNoticeCtrl extends HttpServlet {
 		NoticeDAO dao = new NoticeDAO();
 		int cnt = dao.delNotice(no);
 		
+		
 		if(cnt>=1){
 			response.sendRedirect("GetNoticeListCtrl.do");
 		} else {
-			response.sendRedirect("GetNoticeCtrl.do?no="+no);
+			response.sendRedirect("GetNoticeListCtrl.do?no="+no);
 		}
 	}
 

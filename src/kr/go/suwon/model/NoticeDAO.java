@@ -102,13 +102,12 @@ public class NoticeDAO {
 	}
 
 	public int delNotice(int no) {
-		NoticeDTO dto = new NoticeDTO();
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
 			//글 삭제
-			pstmt = con.prepareStatement(Maria.NOTICE_DELEDTE);
-			pstmt.setInt(1, dto.getNo());
+			pstmt = con.prepareStatement(Maria.NOTICE_DELETE);
+			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
@@ -132,6 +131,7 @@ public class NoticeDAO {
 			pstmt = con.prepareStatement(Maria.NOTICE_UPDATE);
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());
+			pstmt.setInt(3, dto.getNo());
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
