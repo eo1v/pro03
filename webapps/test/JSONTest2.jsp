@@ -4,18 +4,25 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="java.util.*, java.lang.*" %>
 <%@ page import="java.text.*, java.net.InetAddress" %>
-<c:set var="path1" value="${request.getContextPath() }" />
+<c:set var="path1" value="<%=request.getContextPath() %>" />
+<%-- <c:set var="path1" value="${pageContext.request.contextPath }" />   --%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>메인 페이지</title>
-    <jsp:include page="/head.jsp"/>
+<meta charset="UTF-8">
+<title>JSON Test2</title>
+<jsp:include page="/head.jsp"/>
 </head>
 <body>
-  	<jsp:include page="${path1 }/header.jsp" />
-	<h2>${user}님의 테스트 입니다.</h2>
-	<jsp:include page="${path1 }/footer.jsp" />
+
+	<script>
+	$(document).ready(function(){
+		
+	})
+	</script>
+	<div id="con">
+	
+	</div>
+	
 </body>
 </html>

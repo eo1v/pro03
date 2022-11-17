@@ -128,72 +128,33 @@
       </div>
       </div>
 
- <div class="navbar-end" id="tnb">
-			  <div class="navbar-item">
-			  	<c:if test="${empty sid }">
-			 <div class="buttons">
-			   <a href="${path2 }/user/agree.jsp" class="button is-primary">
-			     <strong>Sign up</strong>
-			   </a>
-			   <a href="${path2 }/user/login.jsp" class="button is-light">
-			     Log in
-			   </a>
-			 </div>
-			</c:if>
-			<c:if test="${not empty sid }">
-			 <div class="buttons">
-			   <a href="${path2 }/UserInfoCtrl.do" class="button is-primary">
-			     <strong>Member Info</strong>
-			   </a>
-			   <a href="${path2 }/UserLogoutCtrl.do" class="button is-light">
-			     LogOut
-			   </a>
-				<c:if test='${sid.equals("admin")}'>
-				   <a href="${path2 }/AdminCtrl.do" class="button is-danger">
-				     <strong>Admin</strong>
-				   </a>
-				 </c:if>
-			 </div>
-			</c:if>
-		  </div>
-		</div>
-		</nav>
-	<script>
-	$(document).ready(function(){
-		$.ajax({
-			url:"${path2 }/MemuLoadCtrl.do",
-			type:"POST",
-			enctype:"UTF-8",
-			datatype:"json",
-			processData:false,
-			contentType:false, 
-			cache:false,
-			success:function(data){
-				$(".navbar-dropdown.cate").empty();
-				var trans = $.parseJSON(data);
-				$.each(trans, function(key, value){
-					if(key=="data"){
-						for(var i=0;i<value.length;i++){
-							if(value[i].cate=="A"){
-								$("#cate01").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="B"){
-								$("#cate02").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="C"){
-								$("#cate03").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="D"){
-								$("#cate04").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="E"){
-								$("#cate05").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="F"){
-								$("#cate06").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="G"){
-								$("#cate07").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							}
-						}
-					}
-				});
-				
-			}
-		});
-	});
-	</script>
+  <div class="navbar-end">
+	  <div class="navbar-item">
+	  	<c:if test="${empty sid }">
+	 <div class="buttons">
+	   <a href="${path2 }/user/agree.jsp" class="button is-primary">
+	     <strong>Sign up</strong>
+	   </a>
+	   <a href="${path2 }/user/login.jsp" class="button is-light">
+	     Log in
+	   </a>
+	 </div>
+	</c:if>
+	<c:if test="${not empty sid }">
+	 <div class="buttons">
+	   <a href="${path2 }/UserInfoCtrl.do" class="button is-primary">
+	     <strong>Member Info</strong>
+	   </a>
+	   <a href="${path2 }/UserLogoutCtrl.do" class="button is-light">
+	     LogOut
+	   </a>
+		<c:if test='${sid.equals("admin")}'>
+		   <a href="${path2 }/AdminCtrl.do" class="button is-danger">
+		     <strong>Admin</strong>
+		   </a>
+		 </c:if>
+	 </div>
+	</c:if>
+  </div>
+</div>
+</nav>

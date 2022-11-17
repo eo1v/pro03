@@ -110,7 +110,7 @@
 			url:"${path1 }/IdCheckCtrl.do",	//아이디가 전송되어질 곳
 			type:"post",		//전송방식
 			dataType:"json",	//데이터 반환 방식
-			data:params,		//전송방식이 post인 경우 객체로 묶어서 전송
+			data:params,		//전송방식이 post인 경우 객체로 묶어서 전송 ,던져줌
 			success:function(result){
 				console.log(result.result);
 				var idChk = result.result;	//true 또는 false를 받음
