@@ -1,4 +1,4 @@
-package kr.go.suwon.view;
+package kr.go.suwon.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,22 +13,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.go.suwon.dto.PicDTO;
 import kr.go.suwon.model.TourDAO;
+import net.sf.json.JSONObject;
 
-import org.json.JSONObject;
-
-@WebServlet("/PicJSONCtrl.do")
-public class PicJSONCtrl extends HttpServlet {
+@WebServlet("/ImgResearchCtrl.do")
+public class ImgResearchCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+
 		String tourno = request.getParameter("tourno");
-		
+			
 		PrintWriter out = response.getWriter();
-		TourDAO dao = new TourDAO();
-		ArrayList<PicDTO> picList = dao.JSONPicList(tourno);
+		TourDAO tour = new TourDAO();
+		ArrayList<PicDTO> picList = tour.JSONPicList(tourno);
+		
 		HashMap<String,Object> map = new HashMap<String, Object>();
 		map.put("picList", picList);
-		JSONObject json = new JSONObject(); 
+		
+		JSONObject json = new JSONObject();
 		json.putAll(map);
 		out.println(json);
 	}

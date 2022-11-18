@@ -1,6 +1,7 @@
 package kr.go.suwon.view;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,17 +19,17 @@ public class GetTourListCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int no = Integer.parseInt(request.getParameter("no"));
-		
+	
+		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
 		TourDAO dao = new TourDAO();
-		TourDTO dto = dao.getTour(no);
+		ArrayList<TourDTO> tourList = dao.getTourList();
 		
-		request.setAttribute("dto", dto);
+		request.setAttribute("list", tourList);
 		
-		RequestDispatcher view = request.getRequestDispatcher("");
-		
+		RequestDispatcher view = request.getRequestDispatcher("./tour/tourList.jsp");
+		view.forward(request, response);
 	}
 }

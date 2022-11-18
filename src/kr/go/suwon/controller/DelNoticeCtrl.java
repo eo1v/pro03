@@ -31,5 +31,4 @@ public class DelNoticeCtrl extends HttpServlet {
 			response.sendRedirect("GetNoticeListCtrl.do?no="+no);
 		}
 	}
-
 }

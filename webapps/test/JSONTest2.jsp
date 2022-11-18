@@ -11,18 +11,33 @@
 <head>
 <meta charset="UTF-8">
 <title>JSON Test2</title>
-<jsp:include page="/head.jsp"/>
+<jsp:include page="/head.jsp" />
 </head>
 <body>
-
-	<script>
-	$(document).ready(function(){
-		
-	})
-	</script>
-	<div id="con">
+<div class="container">
+	<h1 class="title">JSON(JavaScript Object Notation)</h1>
+	<p>자바스크립의 객체 형태로 데이터를 교환하는 방식</p>
+	<br><hr><br>
+	<h2 class="title">JSON 하나의 객체 데이터 받기</h2>
+	<div id="con2">
 	
 	</div>
-	
+	<script>
+	$(document).ready(function(){
+		var params = { name : "한시연" }
+		$.ajax({
+			url:"${path1 }/JSONTest2.do",	//아이디가 전송되어질 곳
+			type:"post",		//전송방식
+			dataType:"json",	//데이터 반환 방식
+			data:params,
+			success:function(data){
+				//console.log(data);
+				var user = data;	
+				$("#con2").html("이름 : "+user.name+", 점수 : "+user.point);
+			}
+		});
+	});
+	</script>
+</div>
 </body>
 </html>

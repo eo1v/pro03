@@ -15,11 +15,10 @@
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
+    <div class="navbar-start" id="gnb">
       <a class="navbar-item" href="<%=request.getContextPath() %>/GetNoticeListCtrl.do">
         Documentation
       </a>
-  
        <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           	수원화성
@@ -34,7 +33,7 @@
         </div>
        </div>
        <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
+        <a href="${path2 }/GetTourCateListCtrl.do?cate=A" class="navbar-link">
         	관광  	
         </a>
         <div class="navbar-dropdown">
@@ -54,7 +53,7 @@
         </div>
        </div>
        <div class="navbar-item has-dropdown is-hoverable">
-        	<a class="navbar-link">
+        	<a href="${path2 }/GetTourCateListCtrl.do?cate=B" class="navbar-link">
         	추천코스  	
         </a>
         <div class="navbar-dropdown">
@@ -77,7 +76,7 @@
         </div>
         </div>
          <div class="navbar-item has-dropdown is-hoverable">
-	 	  <a class="navbar-link">
+	 	  <a href="${path2 }/GetTourCateListCtrl.do?cate=C" class="navbar-link">
         	체험  	
           </a>
           <div class="navbar-dropdown">
@@ -93,7 +92,7 @@
         </div>
         </div>
          <div class="navbar-item has-dropdown is-hoverable">
-        	<a class="navbar-link">
+        	<a href="${path2 }/GetTourCateListCtrl.do?cate=D" class="navbar-link">
         	쇼핑ㆍ숙박 	
         </a>
         <div class="navbar-dropdown">
@@ -106,7 +105,7 @@
         </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-        	<a class="navbar-link">
+        	<a href="${path2 }/GetTourCateListCtrl.do?cate=E" class="navbar-link">
         	안내  	
         </a>
         <div class="navbar-dropdown">

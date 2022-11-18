@@ -1,8 +1,12 @@
 package kr.go.suwon.test;
-
 public class TestDTO {
 	private String name;
 	private int point;
+	public TestDTO(){ }
+	public TestDTO(String name, int point) {
+		this.name = name;
+		this.point = point;
+	}
 	public String getName() {
 		return name;
 	}
@@ -15,6 +19,8 @@ public class TestDTO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "TestDTO [name=" + name + ", point=" + point + "]";
+	}
 }

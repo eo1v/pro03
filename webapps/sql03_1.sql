@@ -52,12 +52,28 @@ SELECT * FROM pic;
 
 CREATE TABLE tour(
 	no INT PRIMARY KEY AUTO_INCREMENT,
-	tourno VARCHAR(20) NOT NULL,
-	cate VARCHAR(20) NOT NULL,
-	place VARCHAR(100) NOT NULL,
-	content1 VARCHAR(1000) NOT NULL,
-	content2 VARCHAR(1000) NOT NULL
+	tourno VARCHAR(20),	
+	cate VARCHAR(20),
+	place VARCHAR(100),
+	comment1 VARCHAR(1000),
+	comment2 VARCHAR(1000),
+	addr VARCHAR(200)
 );
 
 DESC tour;
 SELECT * FROM tour;
+
+drop table tour;
+
+CREATE TABLE impress(
+	no INT PRIMARY KEY AUTO_INCREMENT,
+	cate VARCHAR(20),
+	tourno VARCHAR(20),
+	id VARCHAR(30),
+	content VARCHAR(1000),
+	star DOUBLE,
+	imgsrc VARCHAR(150),
+	regdate DATETIME DEFAULT NOW()
+);
+
+select * from impress;

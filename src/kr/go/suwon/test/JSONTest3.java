@@ -11,9 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSON;
+
+import org.apache.taglibs.standard.lang.jstl.ValueSuffix;
 import org.json.JSONObject;
-
-
 //import org.json.JSONObject;
 //리스트 객체 정보 ajax로 보내기
 @WebServlet("/JSONTest3.do")
@@ -22,7 +23,7 @@ public class JSONTest3 extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
+		response.setContentType("application/json");
 		
 		TestDAO dao = new TestDAO();
 		ArrayList<TestDTO> data = dao.testDataAll();
@@ -32,7 +33,7 @@ public class JSONTest3 extends HttpServlet {
 		map.put("data", data);
 		
 		JSONObject json = new JSONObject();
-	//	json.putAll(map); //이게 뭐냐고 
+		JSON.putAll(map);
 		out.println(json.toString());
 	}
 }

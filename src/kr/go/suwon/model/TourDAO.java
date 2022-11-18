@@ -78,7 +78,8 @@ public class TourDAO {
 		return picList;
 	}
 
-	public int addTour(TourDTO dto) {
+	
+	public int addTour (TourDTO dto){
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
@@ -88,18 +89,45 @@ public class TourDAO {
 			pstmt.setString(3, dto.getPlace());
 			pstmt.setString(4, dto.getComment1());
 			pstmt.setString(5, dto.getComment2());
+			pstmt.setString(6, dto.getAddr());
 			cnt = pstmt.executeUpdate();
 			
-		} catch(ClassNotFoundException e){
+		}catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
-		} catch(Exception e){
-			System.out.println("SQL 구문이 처리되지 못했거나 연산이 잘못되었습니다.");
-		} finally {
+		}catch(Exception e){
+			System.out.println("SQL구문이 처리되지 못했거나 연산이 잘못되었습니다.");
+		}finally{
 			Maria.close(pstmt, con);
 		}
 		return cnt;
 	}
 
+	public ArrayList<TourDTO> getTourList(){
+		ArrayList<TourDTO> tourList = new ArrayList<TourDTO>();
+		try{
+			con = Maria.getConnection();
+			pstmt = con.prepareStatement(Maria.TOUR_LIST_ALL);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				TourDTO tour = new TourDTO();
+				tour.setNo(rs.getInt("no"));
+				tour.setTourno(rs.getString("tourno"));
+				tour.setCate(rs.getString("cate"));
+				tour.setPlace(rs.getString("place"));
+				tour.setComment1(rs.getString("comment1"));
+				tour.setComment2(rs.getString("comment2"));
+				tourList.add(tour);
+			}
+		} catch(ClassNotFoundException e){
+			System.out.println("드라이버 로딩 실패");
+		} catch(Exception e){
+			System.out.println("SQL 구문이 처리되지 못했거나 연산이 잘못되었습니다.");
+		} finally {
+			Maria.close(rs, pstmt, con);
+		}
+		return tourList;
+	}
+	
 	public TourDTO getTour(int no) {
 		TourDTO tour = new TourDTO();
 		try {
@@ -165,8 +193,9 @@ public class TourDAO {
 		return cnt;
 	}
 
-	public ArrayList<TourDTO> JSONPlaceList() {
-		ArrayList<TourDTO> tourList = new ArrayList<TourDTO>();
+
+	public ArrayList<TourDTO> JSONPlaceList(){
+		ArrayList<TourDTO>tourList = new ArrayList<TourDTO>();
 		try {
 			con = Maria.getConnection();
 			pstmt = con.prepareStatement(Maria.TOUR_LIST_ALL);
@@ -179,11 +208,11 @@ public class TourDAO {
 				tour.setPlace(rs.getString("place"));
 				tourList.add(tour);
 			}
-		} catch(ClassNotFoundException e){
+		}catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
-		} catch(Exception e){
+		}catch(Exception e){
 			System.out.println("SQL 구문이 처리되지 못했거나 연산이 잘못되었습니다.");
-		} finally {
+		}finally{
 			Maria.close(rs, pstmt, con);
 		}
 		return tourList;

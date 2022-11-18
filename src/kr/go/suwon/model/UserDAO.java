@@ -144,10 +144,7 @@ public class UserDAO {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_UPDATE);
-			//id, pw, name, birth, email, tel, address
-		
 			pstmt.setString(1, user.getPw());
 			pstmt.setString(2, user.getName());
 			pstmt.setString(3, user.getBirth());
