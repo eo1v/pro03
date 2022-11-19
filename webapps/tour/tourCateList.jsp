@@ -23,46 +23,57 @@
 	    <li class="is-active"><a href="#" aria-current="page">
  			<c:set var="cate" value="${placeCate }" /> 
 			<c:if test="${cate eq 'A' }">
-			<span>수원화성</span>
-			</c:if>
-			<c:if test="${cate eq 'B' }">
 			<span>관광</span>
 			</c:if>
-			<c:if test="${cate eq 'C' }">
-			<span>추천코스</span>
-			</c:if>
-			<c:if test="${grade eq 'D' }">
+			<c:if test="${cate eq 'B' }">
 			<span>체험</span>
 			</c:if>
+			<c:if test="${cate eq 'C' }">
+			<span>행사</span>
+			</c:if>
+			<c:if test="${grade eq 'D' }">
+			<span>축제</span>
+			</c:if>
 			<c:if test="${cate eq 'E' }">
-			<span>쇼핑ㆍ숙박</span>
+			<span>숙박</span>
 			</c:if>
 			<c:if test="${cate eq 'F' }">
-			<span>안내</span>
+			<span>음식</span>
+			</c:if>
+			<c:if test="${cate eq 'G' }">
+			<span>쇼핑</span>
+			</c:if>
+			<c:if test="${cate eq 'H' }">
+			<span>기타</span>
 			</c:if>
 	    </a></li>
 	  </ul>
 	</nav>
   <section class="section">
     <div class="container">
-      <h1 class="title">			
-     <c:if test="${cate eq 'A' }">
-			<span>수원화성</span>
-			</c:if>
-			<c:if test="${cate eq 'B' }">
+      <h1 class="title">			<c:if test="${cate eq 'A' }">
 			<span>관광</span>
 			</c:if>
-			<c:if test="${cate eq 'C' }">
-			<span>추천코스</span>
-			</c:if>
-			<c:if test="${grade eq 'D' }">
+			<c:if test="${cate eq 'B' }">
 			<span>체험</span>
 			</c:if>
+			<c:if test="${cate eq 'C' }">
+			<span>행사</span>
+			</c:if>
+			<c:if test="${grade eq 'D' }">
+			<span>축제</span>
+			</c:if>
 			<c:if test="${cate eq 'E' }">
-			<span>쇼핑ㆍ숙박</span>
+			<span>숙박</span>
 			</c:if>
 			<c:if test="${cate eq 'F' }">
-			<span>안내</span>
+			<span>음식</span>
+			</c:if>
+			<c:if test="${cate eq 'G' }">
+			<span>쇼핑</span>
+			</c:if>
+			<c:if test="${cate eq 'H' }">
+			<span>기타</span>
 			</c:if>
 			목록</h1>
       	<div id="con">
@@ -75,23 +86,29 @@
 			          <p class="subtitle">
 			 			<c:set var="cate" value="${placeCate }" /> 
 						<c:if test="${cate eq 'A' }">
-			<span>수원화성</span>
-			</c:if>
-			<c:if test="${cate eq 'B' }">
-			<span>관광</span>
-			</c:if>
-			<c:if test="${cate eq 'C' }">
-			<span>추천코스</span>
-			</c:if>
-			<c:if test="${grade eq 'D' }">
-			<span>체험</span>
-			</c:if>
-			<c:if test="${cate eq 'E' }">
-			<span>쇼핑ㆍ숙박</span>
-			</c:if>
-			<c:if test="${cate eq 'F' }">
-			<span>안내</span>
-			</c:if>
+						<span>관광</span>
+						</c:if>
+						<c:if test="${cate eq 'B' }">
+						<span>체험</span>
+						</c:if>
+						<c:if test="${cate eq 'C' }">
+						<span>행사</span>
+						</c:if>
+						<c:if test="${grade eq 'D' }">
+						<span>축제</span>
+						</c:if>
+						<c:if test="${cate eq 'E' }">
+						<span>숙박</span>
+						</c:if>
+						<c:if test="${cate eq 'F' }">
+						<span>음식</span>
+						</c:if>
+						<c:if test="${cate eq 'G' }">
+						<span>쇼핑</span>
+						</c:if>
+						<c:if test="${cate eq 'H' }">
+						<span>기타</span>
+						</c:if>
 			          </p>
 			          <figure class="image is-4by3">
 			            <img src="${path1 }/upload/${dto.imgURL }" alt="${dto.place }">

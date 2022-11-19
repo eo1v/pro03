@@ -53,22 +53,28 @@
 		      <td>
 				<c:set var="cate" value="${dto.cate }" /> 
 				<c:if test="${cate eq 'A' }">
-				<span>수원화성</span>
-				</c:if>
-				<c:if test="${cate eq 'B' }">
 				<span>관광</span>
 				</c:if>
-				<c:if test="${cate eq 'C' }">
-				<span>추천코스</span>
-				</c:if>
-				<c:if test="${cate eq 'D' }">
+				<c:if test="${cate eq 'B' }">
 				<span>체험</span>
 				</c:if>
+				<c:if test="${cate eq 'C' }">
+				<span>행사</span>
+				</c:if>
+				<c:if test="${cate eq 'D' }">
+				<span>축제</span>
+				</c:if>
 				<c:if test="${cate eq 'E' }">
-				<span>쇼핑ㆍ숙박</span>
+				<span>숙박</span>
 				</c:if>
 				<c:if test="${cate eq 'F' }">
-				<span>안내</span>
+				<span>음식</span>
+				</c:if>
+				<c:if test="${cate eq 'G' }">
+				<span>쇼핑</span>
+				</c:if>
+				<c:if test="${cate eq 'H' }">
+				<span>기타</span>
 				</c:if>
 		      </td>
 		      <td>

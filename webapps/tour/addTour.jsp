@@ -27,12 +27,14 @@
 					  	<div class="select">
 						  <select name="cate" id="cate" class="select" onchange="changeTourNo()" required>
 						  	<option value="">선택</option>
-						    <option value="A">수원화성</option>
-						    <option value="B">관광</option>
-						    <option value="C">추천코스</option>
-						    <option value="D">체험</option>
-						    <option value="E">쇼핑ㆍ숙박</option>
-						    <option value="F">안내</option>
+						    <option value="A">관광</option>
+						    <option value="B">체험</option>
+						    <option value="C">행사</option>
+						    <option value="D">축제</option>
+						    <option value="E">숙박</option>
+						    <option value="F">음식</option>
+						    <option value="G">쇼핑</option>
+						    <option value="H">기타</option>
 						  </select>
 						  <input type="hidden" id="tourno" name="tourno" value="">
 						</div>

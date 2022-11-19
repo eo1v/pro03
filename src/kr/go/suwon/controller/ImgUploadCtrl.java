@@ -32,10 +32,11 @@ public class ImgUploadCtrl extends HttpServlet {
 		
 		int maxSize = 10*1024*1024;
 		String saveFolder = "D:/hsy/pro01/pro03/webapps/upload"; //개발자 디렉토리
-		String uploadPath = request.getRealPath("/upload"); //서버 디렉토리
+		String uploadPath = request.getRealPath("/upload");  //서버 디렉토리
 		
 		TourDAO dao = new TourDAO(); 
 		PicDTO dto = new PicDTO();
+		
 		try {
 			//서버 디렉토리에 먼저 파일을 업로드
 			//MultipartRequest multi = new MultipartRequest(request, uploadPath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
@@ -94,5 +95,7 @@ public class ImgUploadCtrl extends HttpServlet {
 		} catch(Exception e){
 			e.printStackTrace();
 		}
+		
 	}
+
 }

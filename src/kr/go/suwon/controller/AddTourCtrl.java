@@ -11,15 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import kr.go.suwon.dto.TourDTO;
 import kr.go.suwon.model.TourDAO;
 
+
 @WebServlet("/AddTourCtrl.do")
 public class AddTourCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+      
+   
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		
 		String cate = request.getParameter("cate");
 		String tourno = request.getParameter("tourno");
 		String place = request.getParameter("place");
@@ -46,4 +47,5 @@ public class AddTourCtrl extends HttpServlet {
 			response.sendRedirect("./tour/addTour.jsp");
 		}
 	}
+
 }
